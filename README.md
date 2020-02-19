@@ -1,1 +1,1 @@
-# pattern-project.io
+# Pattern Project Placeholder website
