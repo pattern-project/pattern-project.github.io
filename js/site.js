@@ -1,11 +1,7 @@
 function patternLogo(svg,x,y){
 
-	console.log("Adding logo");
-	console.log(svg);
     let svgContainer = svg.append("g")
     	.attr("transform", "translate(" + (x-100) + "," + (y-100) + ")");
-
-    console.log(svgContainer);
 
     let circle = svgContainer.append("circle")
         .attr("cx", 100)
@@ -30,6 +26,7 @@ function patternLogo(svg,x,y){
 		.text("PATTERN")
 		.attr("font-family", "Roboto")
 		.attr("font-size", "30px")
+		.attr("font-weight", 300)
 		.attr("fill", "#ffffff");
 
 	let projectText = svgContainer
@@ -42,6 +39,7 @@ function patternLogo(svg,x,y){
 		.text("PROJECT")
 		.attr("font-family", "Roboto")
 		.attr("font-size", "30px")
+		.attr("font-weight", 300)
 		.attr("fill", "#ffffff");				
 }
 
@@ -79,7 +77,6 @@ function movingZigZag(svg,startX,startY,length,direction,travel,width,height){
 
 		if(startX<-450 || startX>width ||startY<-450 || startY>height ){
 			zigZag.remove();
-			console.log('remove zigzag');
 		} else {
 			setTimeout(function(){update()},25);
 		}
@@ -146,7 +143,6 @@ function movingZigZag(svg,startX,startY,length,direction,travel,width,height){
 function randomZigZags(svg,width,height){
 	let random = Math.random();
 	if(random<0.2){
-		console.log('new zigzag');
 		let travel = Math.floor(Math.random()*2);
 		let direction = Math.floor(Math.random()*2);
 		let length = Math.floor(Math.random()*20) + 20;
@@ -210,7 +206,6 @@ function movingCircle(svg,shape,colour,x,y,outline,size,rotation,speed,width,hei
 function randomShapes(layer,width,height){
 	let random = Math.random();
 	if(random<0.2){
-		console.log('new circle');
 		let x,y;
 		let travel = Math.floor(Math.random()*2);
 		let direction = Math.floor(Math.random()*2);
@@ -259,8 +254,7 @@ function toRadians (angle) {
 
 function init(id){
 	let width = $(id).width();
-	let height = Math.max(window.innerHeight,600);
-
+	let height = Math.max(window.innerHeight,400);
 	let svg = d3.select(id).append("svg")
         .attr("width", width)
         .attr("height", height);
@@ -268,8 +262,12 @@ function init(id){
     let zigZagLayer = svg.append('g');
 
     let shapeLayer = svg.append('g');
-
-	patternLogo(svg,width/2,height/2);
+    if(width>900){
+		patternLogo(svg,width/4,height/2);
+	} else {
+		patternLogo(svg,width/2,height/2);
+	}
+	
 	
 	randomZigZags(zigZagLayer,width,height);
 	randomShapes(shapeLayer,width,height);
