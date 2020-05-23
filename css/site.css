@@ -19,6 +19,9 @@ body {
 	font-size:100px;
 	text-decoration: underline;
 	color:#ff0066;
+	position: absolute;
+	top:0;
+
 }
 
 #frontlogo {
@@ -37,7 +40,6 @@ body {
 	.headlinestatement {
 		text-align: center;
 		font-size:40px;
-		
 	}
 
 	#frontlogo {
@@ -67,9 +69,13 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .toprow {
-	margin-top:-50px;
+	margin-top:-150px;
 }
 
 #left-front {
 	margin-top:-30px;
+}
+
+.highlight {
+	background-color:white;
 }
