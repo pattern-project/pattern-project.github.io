@@ -54,7 +54,7 @@ function movingZigZag(svg,startX,startY,length,direction,travel,width,height){
 
 	let zigZag = svg.append("path")
 		.attr("d", zigZagFunction(data))
-		.attr("stroke", "#000000")
+		.attr("stroke", "#ff0066")
 		.attr("stroke-width", 2)
 		.attr("fill", "none");
 
@@ -142,7 +142,7 @@ function movingZigZag(svg,startX,startY,length,direction,travel,width,height){
 
 function randomZigZags(svg,width,height){
 	let random = Math.random();
-	if(random<0.2){
+	if(random<0.1){
 		let travel = Math.floor(Math.random()*2);
 		let direction = Math.floor(Math.random()*2);
 		let length = Math.floor(Math.random()*20) + 20;
