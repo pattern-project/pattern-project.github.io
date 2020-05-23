@@ -257,20 +257,21 @@ function init(id){
 	let height = Math.max(window.innerHeight,400);
 	let svg = d3.select(id).append("svg")
         .attr("width", width)
-        .attr("height", height);
+        .attr("height", height)
+        .attr("class","top-right");
 
     let zigZagLayer = svg.append('g');
 
     let shapeLayer = svg.append('g');
-    if(width>900){
+    /*if(width>900){
 		patternLogo(svg,width/4,height/2);
 	} else {
 		patternLogo(svg,width/2,height/2);
-	}
+	}*/
 	
 	
 	randomZigZags(zigZagLayer,width,height);
-	randomShapes(shapeLayer,width,height);
+	//randomShapes(shapeLayer,width,height);
 }
 
 init("#page");
