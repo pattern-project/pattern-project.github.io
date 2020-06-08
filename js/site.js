@@ -54,7 +54,7 @@ function movingZigZag(svg,startX,startY,length,direction,travel,width,height){
 
 	let zigZag = svg.append("path")
 		.attr("d", zigZagFunction(data))
-		.attr("stroke", "#000000")
+		.attr("stroke", "#ff0066")
 		.attr("stroke-width", 2)
 		.attr("fill", "none");
 
@@ -142,7 +142,7 @@ function movingZigZag(svg,startX,startY,length,direction,travel,width,height){
 
 function randomZigZags(svg,width,height){
 	let random = Math.random();
-	if(random<0.2){
+	if(random<0.1){
 		let travel = Math.floor(Math.random()*2);
 		let direction = Math.floor(Math.random()*2);
 		let length = Math.floor(Math.random()*20) + 20;
@@ -254,25 +254,34 @@ function toRadians (angle) {
 
 function init(id){
 	let width = $(id).width();
-	let height = Math.max(window.innerHeight,400);
+	let height = $('body').height();
 	let svg = d3.select(id).append("svg")
         .attr("width", width)
-        .attr("height", height);
+        .attr("height", height)
+        .attr("class","top-right");
 
     let zigZagLayer = svg.append('g');
 
     let shapeLayer = svg.append('g');
-    if(width>900){
+    /*if(width>900){
 		patternLogo(svg,width/4,height/2);
 	} else {
 		patternLogo(svg,width/2,height/2);
-	}
+	}*/
 	
 	
 	randomZigZags(zigZagLayer,width,height);
-	randomShapes(shapeLayer,width,height);
+	//randomShapes(shapeLayer,width,height);
 }
 
 init("#page");
+
+$('.tilebox a').hover(function(eventObj) {
+        let par = $(this).parent().parent();
+        par.find('a').css('text-decoration','underline');
+      }, function() {
+        let par = $(this).parent().parent();
+        par.find('a').css('text-decoration','none');
+      });
 
 
