@@ -254,7 +254,7 @@ function toRadians (angle) {
 
 function init(id){
 	let width = $(id).width();
-	let height = Math.max(window.innerHeight,400);
+	let height = $('body').height();
 	let svg = d3.select(id).append("svg")
         .attr("width", width)
         .attr("height", height)
@@ -275,5 +275,13 @@ function init(id){
 }
 
 init("#page");
+
+$('.tilebox a').hover(function(eventObj) {
+        let par = $(this).parent().parent();
+        par.find('a').css('text-decoration','underline');
+      }, function() {
+        let par = $(this).parent().parent();
+        par.find('a').css('text-decoration','none');
+      });
 
 
