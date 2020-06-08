@@ -220,7 +220,21 @@ a:hover {
 }
 
 #valuespicture1 {
-	background-image: url('../images/kit1.jpg');
+	background-image: url('../images/kit1.JPG');
+	background-size: 100% auto;
+    background-repeat:   no-repeat;
+    background-position: center center;
+}
+
+#valuespicture2 {
+	background-image: url('../images/purpose2.jpg');
+	background-size: 100% auto;
+    background-repeat:   no-repeat;
+    background-position: center center;
+}
+
+.annabox {
+	background-image: url('../images/anna.jpg');
 	background-size: 100% auto;
     background-repeat:   no-repeat;
     background-position: center center;
