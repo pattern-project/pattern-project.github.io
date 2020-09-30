@@ -244,3 +244,20 @@ a:hover {
 	margin-top:100px;
 }
 
+.drop {
+	margin-top:100px;
+}
+
+#testpic1 {
+	background-image: url('../images/test_AR_filters.png');
+	background-size: 100% auto;
+    background-repeat:   no-repeat;
+    background-position: center center;
+}
+
+#testpic2 {
+	background-image: url('../images/test_boxers.png');
+	background-size: 100% auto;
+    background-repeat:   no-repeat;
+    background-position: center center;
+}
