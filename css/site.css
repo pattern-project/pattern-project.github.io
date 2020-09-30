@@ -266,7 +266,7 @@ a:hover {
 	font-size:1.4rem;
 	background-color:#000;
 	color:white;
-	height:3rem;
+	min-height:3rem;
 	padding-top:0.5rem;
 }
 
